@@ -1,0 +1,4 @@
+mappings:
+  test-player-jump:
+    class: 'com.mcstarrysky.aiyatsbus.extension.PlayerJumpEvent'
+    slots: FEET

@@ -1,0 +1,7 @@
+name: AiyatsbusExtension
+version: '${version}'
+main: com.mcstarrysky.aiyatsbus.extension.AiyatsbusExtension
+api-version: '1.20'
+authors: [米咔噜]
+depend:
+  - Aiyatsbus

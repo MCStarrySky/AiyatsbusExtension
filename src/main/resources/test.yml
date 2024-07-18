@@ -1,0 +1,26 @@
+
+
+#         Powered by TabooLib 6.1         #
+
+
+basic:
+  id: test
+  name: "测试附魔"
+  max_level: 5
+
+rarity: 罕见
+targets:
+  - 靴子
+
+limitations: [ ]
+
+display:
+  description:
+    general: "如你所见这是一个测试附魔啊啊啊啊啊啊啊"
+
+mechanisms:
+  listeners:
+    on-jump:
+      listen: "test-player-jump"
+      handle: |-
+        operation customize args array [ &player ]
