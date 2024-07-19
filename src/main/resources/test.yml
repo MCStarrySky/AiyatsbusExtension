@@ -23,4 +23,4 @@ mechanisms:
     on-jump:
       listen: "test-player-jump"
       handle: |-
-        operation customize args array [ &player ]
+        operation customize args array [ &event[player] ]
