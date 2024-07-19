@@ -67,7 +67,13 @@ public final class AiyatsbusExtension extends JavaPlugin {
             saveResource("test.yml", true);
         }
 
-        Aiyatsbus.INSTANCE.api().getEnchantmentManager().register(new AiyatsbusEnchantmentBase("test", testEnchantmentFile, Configuration.Companion.loadFromFile(testEnchantmentFile, Type.YAML, true)));
+        Aiyatsbus.INSTANCE.api().getEnchantmentManager().register(
+                new AiyatsbusEnchantmentBase(
+                        "test",
+                        testEnchantmentFile,
+                        Configuration.Companion.loadFromFile(testEnchantmentFile, Type.YAML, true)
+                )
+        );
     }
 
     @Override
