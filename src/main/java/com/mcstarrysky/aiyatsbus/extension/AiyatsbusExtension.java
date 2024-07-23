@@ -2,7 +2,6 @@ package com.mcstarrysky.aiyatsbus.extension;
 
 import com.mcstarrysky.aiyatsbus.core.Aiyatsbus;
 import com.mcstarrysky.aiyatsbus.core.AiyatsbusEnchantmentBase;
-import com.mcstarrysky.aiyatsbus.core.AiyatsbusEventExecutor;
 import com.mcstarrysky.aiyatsbus.core.data.trigger.event.EventMapping;
 import com.mcstarrysky.aiyatsbus.core.data.trigger.event.EventResolver;
 import com.mcstarrysky.aiyatsbus.module.kether.AiyatsbusKetherRegistry;
@@ -43,7 +42,7 @@ public final class AiyatsbusExtension extends JavaPlugin {
 
                     // 这个 EventMappings 是由你自己维护的一个列表, 要添加到 Aiyatsbus 的外部 EventMappings 列表里
                     // 注意这里的监听器 id 与其他拓展和 Aiyatsbus 共享, 必须是独一无二的
-                    AiyatsbusEventExecutor.Companion.getExternalMappings().put(key, mapping);
+                    Aiyatsbus.INSTANCE.api().getEventExecutor().getExternalEventMappings().put(key, mapping);
 
                     Aiyatsbus.INSTANCE.api().getEventExecutor().registerListener(key, mapping);
 
@@ -59,7 +58,7 @@ public final class AiyatsbusExtension extends JavaPlugin {
                 (event, item, entity) -> null
         );
 
-        AiyatsbusEventExecutor.Companion.getResolver().put(PlayerJumpEvent.class, resolver);
+        Aiyatsbus.INSTANCE.api().getEventExecutor().getResolvers().put(PlayerJumpEvent.class, resolver);
         CustomizeOperation.initialize();
 
         final File testEnchantmentFile = new File(getDataFolder(), "test.yml");
